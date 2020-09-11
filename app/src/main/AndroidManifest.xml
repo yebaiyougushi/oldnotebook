@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.oldnotebook">
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="true"
+        android:icon="@drawable/app_ic_notebook"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name=".start.StartActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".login.LoginActivity" >
+        </activity>
+        <activity
+            android:name=".start.AppIntroduce"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".login.LockPatternActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo" >
+        </activity>
+        <activity
+            android:name=".login.LoginPasswdActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+<!--        <activity-->
+<!--            android:name="com.example.oldnotebook.activitys.NewNoteActivity"-->
+<!--            android:label=""-->
+<!--            android:theme="@android:style/Theme.Holo.Light"-->
+<!--            android:windowSoftInputMode="adjustResize" >-->
+<!--        </activity>-->
+        <activity
+            android:name="com.example.oldnotebook.activitys.CheckNoteActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:uiOptions="splitActionBarWhenNarrow" >
+        </activity>
+
+        <!-- android:windowSoftInputMode="adjustResize"   可以解决不自动弹出输入法的BUg -->
+        <activity
+            android:name="com.example.oldnotebook.activitys.EditNoteActivity"
+            android:label=""
+            android:theme="@android:style/Theme.Holo.Light"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.example.oldnotebook.activitys.NoteSettingActivity"
+            android:label="@string/setting"
+            android:theme="@android:style/Theme.Holo.Light" >
+        </activity>
+
+
+        <provider
+            android:name="com.example.oldnotebook.db.NoteProvider"
+            android:authorities="com.example.oldnotebook.db.NoteProvider" />
+
+        <activity
+            android:name="com.example.oldnotebook.activitys.AboutActivity"
+            android:label="@string/about"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="com.example.oldnotebook.about" >
+                </action>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.oldnotebook.activitys.NoteMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="主菜单"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:uiOptions="splitActionBarWhenNarrow" >
+        </activity>
+    </application>
+
+</manifest>

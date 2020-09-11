@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/linearLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+    <com.example.oldnotebook.views.LineEditText
+        android:id="@+id/content_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_spinner"
+        android:hint="@string/add_note_tip"
+        android:gravity="top"
+        android:textSize="22sp"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical"
+        android:inputType="textMultiLine"
+
+        android:textColor="#555555" />
+
+	<LinearLayout
+	    android:id="@+id/ll_spinner"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:orientation="vertical"
+	    >
+	    <TextView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:height="1dp"
+	        android:layout_marginTop="10dp"
+	        android:background="#cfcfcf"
+	        android:layout_marginLeft="-10dp"
+	        android:layout_marginRight="-10dp"
+	        />
+	    
+	    <Spinner 
+	        android:id="@+id/spinner"
+	        android:layout_width="150dp"
+	        android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="150dp"
+	        />
+	</LinearLayout>
+    
+</RelativeLayout>

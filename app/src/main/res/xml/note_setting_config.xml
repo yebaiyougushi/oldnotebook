@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto" >
+
+    <CheckBoxPreference
+                android:key="parent_need_pw_preference"
+                android:title="@string/set_password"
+                />
+    
+    <ListPreference
+        android:defaultValue="0"
+        android:dependency="parent_need_pw_preference"
+        android:dialogTitle="@string/mode_select"
+        android:entries="@array/entries_list_preference"
+        android:entryValues="@array/entryvalues_list_preference"
+        android:key="login_preference"
+        android:title="@string/login_mode" />
+    
+    <PreferenceScreen
+        android:key="sync_screen"
+        android:title="@string/note_sync"
+         >
+    </PreferenceScreen>
+    
+    <PreferenceScreen
+        android:summary=""
+        android:key="about_screen"
+        android:title="@string/about" >
+        <intent
+            android:action="com.example.oldnotebook.about"
+            android:targetClass="com.example.oldnotebook.activitys.AboutActivity"
+            android:targetPackage="com.example.oldnotebook" />
+    </PreferenceScreen>
+
+</PreferenceScreen>
